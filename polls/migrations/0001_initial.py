@@ -102,7 +102,7 @@ class Migration(migrations.Migration):
             ],
             options={
                 'db_table': 'citoyen',
-                'managed': False,
+                'managed': True,
             },
         ),
         migrations.CreateModel(

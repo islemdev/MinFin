@@ -85,7 +85,7 @@ class Citoyen(models.Model):
     cin = models.IntegerField(db_column='CIN')  # Field name made lowercase.
 
     class Meta:
-        managed = False
+        managed = True
         db_table = 'citoyen'
 
 
