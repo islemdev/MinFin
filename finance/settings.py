@@ -39,9 +39,13 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'polls.apps.PollsConfig',
+    'corsheaders',
 ]
 
+
+
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -50,6 +54,9 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+CORS_ORIGIN_ALLOW_ALL = True
+CORS_ALLOW_CREDENTIALS = False
+
 
 ROOT_URLCONF = 'finance.urls'
 
@@ -81,13 +88,15 @@ DATABASES = {
 'NAME': 'finance',
 'USER': 'root',
 'PASSWORD': "",
-'HOST': "",
-'PORT': "",
+'HOST': "db",
+'PORT': 3306,
 'OPTIONS': {
 'init_command': "SET sql_mode='STRICT_TRANS_TABLES'"
 }
 }
 }
+
+SECURE_SSL_REDIRECT = False
 
 
 # Password validation

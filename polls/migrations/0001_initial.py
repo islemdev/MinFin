@@ -119,7 +119,7 @@ class Migration(migrations.Migration):
             ],
             options={
                 'db_table': 'django_admin_log',
-                'managed': False,
+                'managed': True,
             },
         ),
         migrations.CreateModel(
